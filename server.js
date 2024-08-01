@@ -24,10 +24,10 @@ app.use('/api/admin',require('./routes/adminRoutes'));
 app.use('/api/doctors',require('./routes/doctorRoutes'));
 
 //static files
-app.use(express.static(path.join(__dirname, './client/build')))
+app.use(express.static(path.join(__dirname, './Client/build')))
 
 app.get('*', function(req,res){
-    res.sendFile(path.join(__dirname, './client/build/index.html'))
+    res.sendFile(path.join(__dirname, './Client/build/index.html'))
 })
 const port = process.env.PORT || 4002;
 //listen port
