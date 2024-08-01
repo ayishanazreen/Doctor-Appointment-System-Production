@@ -4,7 +4,8 @@ module.exports = async(req,res,next) =>
 {
     try {
         const authorizationHeader = req.headers['authorization'];
-        if (authorizationHeader && authorizationHeader.split) {
+        if (authorizationHeader && authorizationHeader.split)
+        {
         const token=req.headers['authorization'].split(" ")[1]; //getting the token 
         jwt.verify(token, process.env.JWT_SECRET, (error, decode)=>{  // verify the token using JWT
         if(error)
@@ -17,7 +18,7 @@ module.exports = async(req,res,next) =>
           next();
         }
         }           
-      })
+      )}
         
     } 
     catch(error)
